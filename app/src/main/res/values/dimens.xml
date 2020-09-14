@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="card_ancho">150dp</dimen>
+    <dimen name="card_alto">220dp</dimen>
+    <dimen name="card_imagen_alto">100dp</dimen>
+    <dimen name="card_titulo">24dp</dimen>
+    <dimen name="card_descripcion">12dp</dimen>
+
+</resources>

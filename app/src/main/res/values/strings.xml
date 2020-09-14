@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Petagram</string>
+    <string name="titulo">Lista de Mascotas</string>
+    <string name="boton">click aqui</string>
+    <string name="mensaje">Toast Mensaje</string>
+    <string name="texto_accion">Texto Accion</string>
+    
+    <string-array name="planetas">
+        <item>Mercurio</item>
+        <item>Venus</item>
+        <item>Tierra</item>
+        <item>Marte</item>
+        <item>Jupiter</item>
+    </string-array>
+
+    <string name="titulo_tarjeta">Android 5.0</string>
+    <string name="descripcion_tarjeta">Texto de descripcion de Android 5.0</string>
+
+</resources>
