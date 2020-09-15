@@ -6,4 +6,15 @@
     <dimen name="card_titulo">24dp</dimen>
     <dimen name="card_descripcion">12dp</dimen>
 
+    <dimen name="card_padding">10dp</dimen>
+    <dimen name="card_corner_radius">5dp</dimen>
+    <dimen name="card_image_w">128dp</dimen>
+    <dimen name="card_image_h">128dp</dimen>
+    <dimen name="card_icon_size">32dp</dimen>
+
+    <dimen name="card_text_name">16sp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+
+    <dimen name="actionbar_elevation">4dp</dimen>
+
 </resources>
