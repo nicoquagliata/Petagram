@@ -30,5 +30,16 @@
 
     <string name="menu_fav">Favoritos</string>
     <string name="menu_exit">Salir</string>
+    <string name="menu_contacto">Contacto</string>
+    <string name="menu_acerca">Acerca de</string>
+
+    <string name="acerca_titulo">Acerca de</string>
+    <string name="acerca_texto">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam tristique, justo vel mollis condimentum, mauris nulla posuere felis, vitae egestas magna tellus ut ligula. Suspendisse luctus luctus egestas. Duis luctus nisl nulla, quis ullamcorper felis elementum in. Duis ut ullamcorper sem. Duis id neque molestie, volutpat justo et, convallis lectus. Morbi viverra nisl in dolor tempor, a laoreet tortor vestibulum. Praesent volutpat fringilla nisi, sit amet rutrum mi ultrices vel. Sed porta lectus eu ex cursus, id euismod diam volutpat. Sed ac magna ac lorem volutpat auctor. Nam et laoreet justo, aliquet commodo ipsum. Suspendisse pellentesque ornare nunc. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum aliquam porta ipsum. Suspendisse quis sagittis augue, a fermentum orci. Maecenas sagittis tortor in mi tincidunt facilisis.</string>
+    <string name="form_username">nombre</string>
+    <string name="form_email">email</string>
+    <string name="form_descripcion">texto</string>
+    <string name="form_enviar">enviar</string>
+    <string name="hello_blank_fragment">mi mascota</string>
+    <string name="nombre_mascota">Mi Mascota Feliz</string>
 
 </resources>

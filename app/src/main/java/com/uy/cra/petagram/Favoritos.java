@@ -1,10 +1,10 @@
 package com.uy.cra.petagram;
 
-import android.content.Intent;
 import android.os.Bundle;
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
+import com.uy.cra.petagram.adapter.MascotaAdaptador;
+import com.uy.cra.petagram.fragment.RecyclerViewFragment;
+import com.uy.cra.petagram.pojo.Mascota;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,8 +14,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -46,7 +44,7 @@ public class Favoritos extends AppCompatActivity {
         listaMascotas.setLayoutManager(llm);
 
 //      inicializarListaMascotas();
-        mascotas = MainActivity.recuperarListaMascotas();
+        mascotas = RecyclerViewFragment.recuperarListaMascotas();
         ArrayList<Mascota> mascotasFavoritas = new ArrayList<Mascota>();
 
         // ordenar por likes

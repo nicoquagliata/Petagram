@@ -1,4 +1,4 @@
-package com.uy.cra.petagram;
+package com.uy.cra.petagram.pojo;
 
 public class Mascota {
     private String nombre;

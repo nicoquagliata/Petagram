@@ -17,4 +17,7 @@
 
     <dimen name="actionbar_elevation">4dp</dimen>
 
+    <dimen name="acerca_left_margin">30dp</dimen>
+    <dimen name="acerca_text_width">320dp</dimen>
+
 </resources>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Acerca">
+
+    <include android:id="@+id/miActionBar"
+        layout="@layout/actionbar"/>
+
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="@dimen/acerca_text_width"
+        android:layout_height="wrap_content"
+        android:text="@string/acerca_titulo"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:fontFamily="@font/audiowide"
+        tools:layout_editor_absoluteX="@dimen/acerca_left_margin"
+        tools:layout_editor_absoluteY="64dp" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="@dimen/acerca_text_width"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/acerca_texto"
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        tools:layout_editor_absoluteX="@dimen/acerca_left_margin" />
+</androidx.constraintlayout.widget.ConstraintLayout>
