@@ -14,39 +14,60 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.uy.cra.petagram.pojo.Mascota;
 import com.uy.cra.petagram.adapter.MascotaAdaptador;
 import com.uy.cra.petagram.R;
+import com.uy.cra.petagram.presentador.IRecyclerViewFragmentPresenter;
+import com.uy.cra.petagram.presentador.RecyclerViewFragmentPresenter;
 
 import java.util.ArrayList;
 
-public class RecyclerViewFragment extends Fragment {
+public class RecyclerViewFragment extends Fragment implements IRecyclerViewFragmentView {
 
-    private static ArrayList<Mascota> mascotas = new ArrayList<Mascota>();;
+    ArrayList<Mascota> mascotas;
     private RecyclerView listaMascotas;
     public MascotaAdaptador adaptador;
+
+    private IRecyclerViewFragmentPresenter presenter;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_recyclerview, container, false);
 
-
         listaMascotas = (RecyclerView) v.findViewById(R.id.rvMascotas);
-
+        presenter = new RecyclerViewFragmentPresenter(this, getContext());
+/*
         LinearLayoutManager llm = new LinearLayoutManager(getActivity());
         llm.setOrientation(LinearLayoutManager.VERTICAL);
         listaMascotas.setLayoutManager(llm);
-
-
-
+*/
         // Grid Layout
 //        GridLayoutManager glm = new GridLayoutManager(getActivity(), 1);
 //        listaContactos.setLayoutManager(glm);
-
+/*
         inicializarListaMascotas();
         inicializarAdaptador();
-
+*/
         return v;
     }
 
+    @Override
+    public void generarLinearLayoutVertical() {
+        LinearLayoutManager llm = new LinearLayoutManager(getActivity());
+        llm.setOrientation(LinearLayoutManager.VERTICAL);
+        listaMascotas.setLayoutManager(llm);
+    }
+
+    @Override
+    public MascotaAdaptador crearAdaptador(ArrayList<Mascota> mascotas) {
+        MascotaAdaptador adaptador = new MascotaAdaptador(mascotas, getActivity());
+        return adaptador;
+    }
+
+    @Override
+    public void inicializarAdaptadorRV(MascotaAdaptador adaptador) {
+        listaMascotas.setAdapter(adaptador);
+    }
+
+/*
     private void inicializarAdaptador(){
         adaptador = new MascotaAdaptador(mascotas, getActivity());
         listaMascotas.setAdapter(adaptador);
@@ -63,11 +84,12 @@ public class RecyclerViewFragment extends Fragment {
         mascotas.add(new Mascota("Rocky",       1, R.drawable.d8));
     }
 
-    public static final ArrayList recuperarListaMascotas(){
+
+*/
+    public final ArrayList recuperarListaMascotas(){
         ArrayList<Mascota> masc = new ArrayList<Mascota>();
         masc = mascotas;
 
         return masc;
     }
-
 }

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Petagram</string>
+    <string name="app_name">PetagramNQ</string>
     <string name="titulo">Lista de Mascotas</string>
     <string name="boton">click aqui</string>
     <string name="mensaje">Toast Mensaje</string>

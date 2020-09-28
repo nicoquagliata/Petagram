@@ -1,6 +1,9 @@
 package com.uy.cra.petagram.pojo;
 
 public class Mascota {
+
+
+    private int id;
     private String nombre;
     private int likes;
     private int foto;
@@ -9,6 +12,10 @@ public class Mascota {
         this.nombre = nombre;
         this.likes = likes;
         this.foto = foto;
+    }
+
+    public Mascota(){
+
     }
 
     public String getNombre() {
@@ -33,5 +40,13 @@ public class Mascota {
 
     public void setFoto(int foto) {
         this.foto = foto;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }

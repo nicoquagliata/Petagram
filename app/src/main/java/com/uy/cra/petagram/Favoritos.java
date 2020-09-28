@@ -3,7 +3,7 @@ package com.uy.cra.petagram;
 import android.os.Bundle;
 
 import com.uy.cra.petagram.adapter.MascotaAdaptador;
-import com.uy.cra.petagram.fragment.RecyclerViewFragment;
+import com.uy.cra.petagram.db.ConstructorMascotas;
 import com.uy.cra.petagram.pojo.Mascota;
 
 import androidx.appcompat.app.ActionBar;
@@ -22,6 +22,10 @@ public class Favoritos extends AppCompatActivity {
     ArrayList<Mascota> mascotas;
     private RecyclerView listaMascotas;
     public MascotaAdaptador adaptador;
+    private ConstructorMascotas constructorMascotas;
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,15 +43,25 @@ public class Favoritos extends AppCompatActivity {
 
         listaMascotas = (RecyclerView) findViewById(R.id.rvFavoritos);
 
+
         LinearLayoutManager llm = new LinearLayoutManager(this);
         llm.setOrientation(LinearLayoutManager.VERTICAL);
         listaMascotas.setLayoutManager(llm);
 
-//      inicializarListaMascotas();
-        mascotas = RecyclerViewFragment.recuperarListaMascotas();
-        ArrayList<Mascota> mascotasFavoritas = new ArrayList<Mascota>();
 
-        // ordenar por likes
+        constructorMascotas = new ConstructorMascotas(this);
+        mascotas = constructorMascotas.obtenerDatosFavoritos();
+
+//      inicializarListaMascotas();
+        //mascotas = RecyclerViewFragment.recuperarListaMascotas();
+
+        //listaMascotas.setAdapter(new MascotaAdaptador(mascotas, this));
+
+
+        //ArrayList<Mascota> mascotasFavoritas = new ArrayList<Mascota>();
+
+        // ordenar por
+/*
             for (int i=0;i<mascotas.size();i++) {
                 if(i>0){
                     if (mascotas.get(i).getLikes() > mascotasFavoritas.get(i-1).getLikes()){
@@ -59,9 +73,10 @@ public class Favoritos extends AppCompatActivity {
                     mascotasFavoritas.add(mascotas.get(i));
                 }
             }
+
             mascotasFavoritas.subList(5, mascotasFavoritas.size()).clear();
             mascotas = mascotasFavoritas;
-
+*/
             inicializarAdaptador();
 
 
@@ -87,4 +102,5 @@ public class Favoritos extends AppCompatActivity {
     }
         return(super.onOptionsItemSelected(item));
     }
+
 }

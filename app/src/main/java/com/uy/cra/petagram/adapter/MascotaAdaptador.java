@@ -12,6 +12,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.uy.cra.petagram.db.ConstructorMascotas;
 import com.uy.cra.petagram.pojo.Mascota;
 import com.uy.cra.petagram.R;
 
@@ -37,19 +38,22 @@ public class MascotaAdaptador extends RecyclerView.Adapter<MascotaAdaptador.Masc
     @Override
     public void onBindViewHolder(@NonNull final MascotaAdaptador.MascotaViewHolder holder, int position) {
         final Mascota mascota = mascotas.get(position);
-        Integer mascotaLikes = mascota.getLikes();
         holder.imgFoto.setImageResource(mascota.getFoto());
         holder.tvNombreCV.setText(mascota.getNombre());
-        holder.tvLikesCV.setText(mascotaLikes.toString());
+        holder.tvLikesCV.setText(String.valueOf(mascota.getLikes()));
 
         holder.btnLike.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Integer mascotaLikes = mascota.getLikes();
-                mascotaLikes +=1;
-                mascota.setLikes(mascotaLikes);
+//                Integer mascotaLikes = mascota.getLikes();
+//                mascotaLikes +=1;
+//                mascota.setLikes(mascotaLikes);
                 Toast.makeText(activity, "Diste like a " + mascota.getNombre(), Toast.LENGTH_SHORT).show();
-                holder.tvLikesCV.setText(mascotaLikes.toString());
+
+                ConstructorMascotas constructorMascotas = new ConstructorMascotas(activity);
+                constructorMascotas.darLikeMascota(mascota);
+
+                holder.tvLikesCV.setText(String.valueOf(constructorMascotas.obtenerLikesMascota(mascota)));
             }
         });
 
